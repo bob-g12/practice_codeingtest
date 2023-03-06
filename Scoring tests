@@ -1,0 +1,12 @@
+"""
+class report_card:
+    def __init__(self,card,absence):
+        self.card=card
+        self.absence=absence
+"""
+pupil,Passing_score=map(int,input().split())
+for i in range(pupil):
+    #print(i)
+    card,absence=input().split()
+    if int(card)-int(absence)*5>=Passing_score or Passing_score==0:
+        print(i+1)
