@@ -1,0 +1,25 @@
+spot=int(input())
+stay_time=[0]*spot
+Travel_time=[0]*spot
+
+for i in range(spot):
+    stay_time[i]=int(input())
+#print(stay_time)#[2, 1, 4]
+for i in range(spot):
+    Travel_time[i]=input().split()
+#print(Travel_time)#[['0', '3', '2'], ['3', '0', '8'], ['2', '8', '0']]
+spot_place=int(input())
+destination=[0]*spot_place
+spot_time=0
+for i in range(spot_place):
+    destination[i]=int(input())
+#print(destination)#[1, 2, 3, 1]
+start_point=[0]*len(destination)
+#print(start_point)#[0,0,0,0]
+for i in destination:
+    #print(i)#1 2 3 1 
+    spot_time+=int(start_point[i-1])+stay_time[i-1]
+    #print(spot_time)
+    start_point=Travel_time[i-1]
+print(spot_time)
+    
