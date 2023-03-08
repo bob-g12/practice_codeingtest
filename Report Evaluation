@@ -1,0 +1,38 @@
+pupil,problem=map(int,input().split())
+Allocation=100/problem
+Allocation_int=int(Allocation)
+Final_Points=0
+score=[0]*pupil
+filed_day=[0]*pupil
+
+for i in range(pupil):
+    filed_day[i],score[i]=map(int,input().split())
+    #print(filed_day,score)#-2 17  -7 20  2 24]
+    
+for i in range(pupil):
+    
+     
+     
+    Final_Points=score[i]*Allocation_int
+    #print(Final_Points)
+    #print(filed_day[i])
+    if filed_day[i]<=0:
+        Final_Points=Final_Points/1
+        #print("プラス")
+    elif filed_day[i]>=1 and filed_day[i]<=9:
+        Final_Points=Final_Points*0.8
+        #print("8割")
+    else:
+        Final_Points=0
+        #print("０点")
+    #print(Final_Points)
+    if Final_Points>=80:
+        
+        print("A")
+    elif Final_Points>=70:
+        print("B")
+    elif Final_Points>=60:
+        print("C")
+    elif Final_Points<60:
+        print("D")
+    
