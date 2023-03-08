@@ -1,0 +1,31 @@
+fare,Hotel_fee,count=map(int,input().split())
+#print(fare,Hotel_fee,count)#200 300 3
+intern_start_list=[0]*count
+intern_end_list=[0]*count
+expenditure=0
+for i in range(count):
+    intern_start,intern_end=map(int,input().split())
+    intern_start_list[i]+=intern_start
+    intern_end_list[i]+=intern_end
+    #print(intern_start,intern_end)
+#print(intern_start_list)
+starting_point=0
+for i in range(count):
+    #print(starting_point)
+    if starting_point==0:
+        expenditure+=fare
+        starting_point=intern_end_list[i]
+    else:
+        interval = intern_start_list[i] - starting_point
+        #print(interval)
+        #print(intern_start_list[i])
+        starting_point=intern_end_list[i]
+        if interval*Hotel_fee>=fare*2:
+            expenditure+=fare*2
+        else:
+            expenditure+=interval*Hotel_fee
+expenditure+=fare
+    
+        
+
+print(expenditure)#1000
