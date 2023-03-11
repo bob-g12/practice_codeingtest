@@ -1,0 +1,19 @@
+time,pattern=map(int,input().split())
+behavior=[0]*pattern
+display=[]
+for i in range(pattern):
+    behavior[i]=input().split()
+
+for i in range(time):
+    i+=1
+   # print(i,"i")
+    for a in range(pattern):
+        if i%int(behavior[a][0])==0:
+            display.append(behavior[a][1])
+    if len(display)==0:
+        print(i)
+    else:
+        print(*display)
+    display.clear()
+#print(i)
+        
