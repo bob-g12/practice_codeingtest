@@ -1,0 +1,14 @@
+x,y,noise=map(int,input().split())
+Shade=int(input())
+a=[0]*Shade
+b=[0]*Shade
+for i in range(Shade):
+    a[i],b[i]=map(int,input().split())
+for i in range(Shade):
+    #print((x-a[i])**2+(y-b[i])**2)
+    
+    if (x-a[i])**2+(y-b[i])**2>=noise**2:
+        print("silent")
+    else:
+        print("noisy")
+    
