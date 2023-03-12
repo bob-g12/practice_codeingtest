@@ -1,0 +1,27 @@
+class User:
+    def __init__(self,nickname,old,birth,state):
+        self.nickname=nickname
+        self.old=old
+        self.birth=birth
+        self.state=state
+numbers,update=map(int,input().split())
+detail=[0]*numbers
+update_information=[0]*update
+for i in range(numbers):
+    detail[i]=input().split()
+for i in range(update):
+    update_information[i]=input().split()
+aaa=[0]*numbers
+for i in range(numbers):
+    aaa[i]=User(detail[i][0],detail[i][1],detail[i][2],detail[i][3])
+    for a in range(update):
+        #print(update_information[a][0])
+        #print(i+1)
+        if int(update_information[a][0])==i+1:
+            aaa[i].nickname=update_information[a][1]
+            #print(aaa)
+    print(aaa[i].nickname,end=" ")
+    print(aaa[i].old,end=" ")
+    print(aaa[i].birth,end=" ")
+    print(aaa[i].state)
+    
