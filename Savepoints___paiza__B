@@ -1,0 +1,32 @@
+height,width,spot=map(int,input().split())
+MAP_data=[0]*height
+for i in range(height):
+    MAP_data[i]=input()
+    #print(MAP_data[i][0])
+Savepoints=[]
+present_location=[]
+distance=[]
+spot_number_list=[]
+spot_number=0
+for i in range(height):
+    for a in range(width):
+        
+        if MAP_data[i][a]=="N":
+            present_location.append([i,a])
+            #print(present_location,"a")
+        if MAP_data[i][a]!="N" and MAP_data[i][a]!="#":
+                Savepoints.append([i,a])
+#print(Savepoints,"b")
+for i in range(spot):
+    distance.append(abs(Savepoints[i][0] - present_location[0][0])+ abs(Savepoints[i][1] - present_location[0][1]))
+#print(distance)
+distance_sort=sorted(distance)
+for i in range(spot):
+    if distance_sort[0]==distance[i]:
+        #print(MAP_data[Savepoints[i][0]][Savepoints[i][1]])
+        spot_number+=1
+        spot_number_list.append(MAP_data[Savepoints[i][0]][Savepoints[i][1]])
+print(spot_number)
+spot_number_list.sort()
+for i in range(len(spot_number_list)):
+    print(spot_number_list[i])
