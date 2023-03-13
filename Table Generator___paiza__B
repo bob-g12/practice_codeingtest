@@ -1,0 +1,32 @@
+partition=int(input())
+titol=input().split()
+number=int(input())
+contents=[0]*number
+for i in range(number):
+    contents[i]=input().split()
+
+contents_0_len=[0]*partition
+for i in range(partition):
+    contents_0_len[i]=len(titol[i])
+#print(contents_0_len)
+for i in range(number):
+    for a in range(partition):
+        if contents_0_len[a]<=len(contents[i][a]):
+            contents_0_len[a]=len(contents[i][a])
+#print(contents_0_len)
+
+for i in range(partition):
+    print("| "+titol[i]+" "*(contents_0_len[i]- len(titol[i])+1),end="")
+    if i==partition-1:
+        print("|")
+        
+for i in range(partition):
+    print("|"+"-"*(contents_0_len[i]+2),end="")
+    if i==partition-1:
+        print("|")
+        
+for i in range(number):
+    for a in range(partition):
+        print("| "+contents[i][a]+" "*(contents_0_len[a]-len(contents[i][a])+1),end="")
+        if a==partition-1:
+            print("|")
